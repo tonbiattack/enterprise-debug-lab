@@ -26,7 +26,7 @@ public class ExternalCustomerClient {
     ResponseEntity<CustomerResponse[]> response = restTemplate.exchange(
         externalApiUrl + "/external/customers?keyword=" + keyword,
         HttpMethod.GET,
-        new HttpEntity<>(new HttpHeaders()),
+        new HttpEntity<>(headers),
         CustomerResponse[].class);
     CustomerResponse[] body = response.getBody();
     return body == null ? List.of() : Arrays.asList(body);
