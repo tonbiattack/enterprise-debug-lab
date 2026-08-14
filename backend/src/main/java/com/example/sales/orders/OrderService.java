@@ -11,6 +11,7 @@ public class OrderService {
 
   public OrderService(InventoryRepository inventoryRepository) { this.inventoryRepository = inventoryRepository; }
 
+  @Transactional
   public void place(OrderRequest request) {
     Inventory inventory = inventoryRepository.findById(request.productId()).orElseThrow(() -> new IllegalArgumentException("Product not found"));
     inventory.reserve(request.quantity());
