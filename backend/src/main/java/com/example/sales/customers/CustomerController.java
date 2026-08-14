@@ -25,6 +25,6 @@ public class CustomerController {
 
   @GetMapping("/customers/{id}")
   public Map<String, Object> detail(@PathVariable String id) {
-    return Map.of("id", id, "displayName", "Acme Corporation", "recentOrderCount", 2);
+    return Map.of("id", id, "displayName", "", "recentOrderCount", 2);
   }
 }
