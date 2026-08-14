@@ -9,7 +9,6 @@ public class Inventory {
   @Id
   private String productId;
   private int availableQuantity;
-  @Version
   private Long version;
 
   protected Inventory() {}
