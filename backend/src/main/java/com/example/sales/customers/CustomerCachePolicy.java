@@ -6,6 +6,6 @@ import org.springframework.stereotype.Component;
 @Component
 public class CustomerCachePolicy {
   public boolean shouldCache(List<CustomerResponse> customers) {
-    return true;
+    return !customers.isEmpty();
   }
 }
