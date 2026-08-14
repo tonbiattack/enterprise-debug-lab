@@ -1,5 +1,5 @@
 {
-  "priority": 1,
+  "priority": 10,
   "request": { "method": "GET", "urlPath": "/external/customers", "queryParameters": { "keyword": { "matches": ".+" } } },
   "response": { "status": 200, "headers": { "Content-Type": "application/json" }, "bodyFileName": "customers.json" }
 }
