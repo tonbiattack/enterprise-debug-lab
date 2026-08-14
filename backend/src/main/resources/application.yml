@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: sales-backend
+  datasource:
+    url: jdbc:postgresql://${DATABASE_HOST:localhost}:${DATABASE_PORT:5432}/${DATABASE_NAME:sales}
+    username: ${DATABASE_USER:sales}
+    password: ${DATABASE_PASSWORD:sales}
+  data:
+    redis:
+      host: ${REDIS_HOST:localhost}
+      port: ${REDIS_PORT:6379}
+  jpa:
+    hibernate:
+      ddl-auto: update
+    open-in-view: false
+server:
+  port: 8080
+external:
+  api:
+    url: ${EXTERNAL_API_URL:http://localhost:8089}
+logging:
+  level:
+    org.hibernate.SQL: DEBUG

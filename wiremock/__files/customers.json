@@ -1,0 +1,4 @@
+[
+  { "id": "c-100", "name": "Acme Corporation", "tier": "GOLD" },
+  { "id": "c-200", "name": "Blue Sky Ltd.", "tier": "STANDARD" }
+]

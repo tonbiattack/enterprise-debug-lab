@@ -1,0 +1,5 @@
+{
+  "priority": 2,
+  "request": { "method": "GET", "urlPath": "/external/customers", "headers": { "X-Test-Scenario": { "equalTo": "temporary-empty" } } },
+  "response": { "status": 200, "headers": { "Content-Type": "application/json" }, "body": "[]" }
+}

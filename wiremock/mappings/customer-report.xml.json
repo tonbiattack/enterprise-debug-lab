@@ -1,0 +1,5 @@
+{
+  "priority": 1,
+  "request": { "method": "GET", "urlPath": "/external/reports/customer" },
+  "response": { "status": 200, "headers": { "Content-Type": "application/xml" }, "bodyFileName": "customer-report.xml" }
+}
