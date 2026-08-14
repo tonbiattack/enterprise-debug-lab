@@ -14,7 +14,7 @@ public class CustomerReportXmlParser {
       DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
       factory.setNamespaceAware(true);
       Document document = factory.newDocumentBuilder().parse(new ByteArrayInputStream(xml.getBytes()));
-      NodeList nodes = document.getElementsByTagNameNS("urn:sales:report", "reportId");
+      NodeList nodes = document.getElementsByTagNameNS("urn:sales:reports", "reportId");
       if (nodes.getLength() != 1) throw new IllegalArgumentException("reportId is required exactly once");
       return ((Element) nodes.item(0)).getTextContent();
     } catch (Exception exception) {
