@@ -22,7 +22,7 @@ public class CustomerOrderReadService {
   public static String batchOrderCountSql(int customerCount) {
     if (customerCount <= 0) throw new IllegalArgumentException("customerCount must be positive");
     String placeholders = String.join(", ", java.util.Collections.nCopies(customerCount, "?"));
-    return "select customer_id, count(*) as order_count from sales_order where customer_id = ? group by customer_id";
+    return "select customer_id, count(*) as order_count from sales_order where customer_id in (" + placeholders + ") group by customer_id";
   }
 
   public record CustomerOrderCount(String customerId, int orderCount) {}
