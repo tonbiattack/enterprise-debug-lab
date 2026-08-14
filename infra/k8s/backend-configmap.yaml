@@ -6,6 +6,6 @@ data:
   DATABASE_HOST: postgres
   DATABASE_PORT: "5432"
   DATABASE_NAME: sales
-  REDIS_HOST: redis
+  REDIS_HOST: redis-primary
   REDIS_PORT: "6379"
   EXTERNAL_API_URL: http://wiremock:8080
