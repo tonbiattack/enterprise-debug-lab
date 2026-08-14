@@ -1,0 +1,10 @@
+{
+  "name": "enterprise-debug-lab",
+  "private": true,
+  "packageManager": "pnpm@10.12.1",
+  "scripts": {
+    "test": "pnpm --dir frontend test && pnpm --dir bff test",
+    "typecheck": "pnpm --dir frontend typecheck && pnpm --dir bff typecheck",
+    "verify": "pnpm typecheck && pnpm test && mvn -f backend/pom.xml test"
+  }
+}
