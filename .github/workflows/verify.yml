@@ -1,0 +1,31 @@
+name: Verify debug lab
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10.12.1
+      - name: Install Node dependencies
+        run: pnpm install --frozen-lockfile
+      - name: Type-check and test Frontend / BFF
+        run: pnpm typecheck && pnpm test
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '21'
+      - name: Test Spring Boot backend
+        run: mvn -q -f backend/pom.xml test
+      - name: Check required lab documentation
+        run: ./scripts/verify.sh
