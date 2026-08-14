@@ -5,6 +5,6 @@ export class DownstreamError extends Error {
 }
 
 export async function propagateDownstream<T>(response: Response): Promise<T> {
-  if (!response.ok) return { items: [] } as T
+  if (!response.ok) throw new DownstreamError(response.status, await response.text())
   return response.json() as Promise<T>
 }
